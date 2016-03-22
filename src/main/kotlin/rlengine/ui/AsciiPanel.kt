@@ -188,7 +188,7 @@ class AsciiPanel(cellDimensions: Dimension, tilesetFile: String, characterWidth:
                 }
 
                 val lookupOp = setColorCharacter(terminal[i][j].backgroundColor, terminal[i][j].dataColor)
-                graphics!!.drawImage(lookupOp.filter(character!![terminal[i][j].data.toInt()], null), j * characterSize.width, i * characterSize.height, this)
+                graphics!!.drawImage(lookupOp.filter(character[terminal[i][j].data.toInt()], null), j * characterSize.width, i * characterSize.height, this)
 
                 oldTerminal[i][j].data = terminal[i][j].data
                 oldTerminal[i][j].dataColor = terminal[i][j].dataColor
@@ -196,7 +196,7 @@ class AsciiPanel(cellDimensions: Dimension, tilesetFile: String, characterWidth:
             }
         }
 
-        g!!.drawImage(image, 0, 0, this)
+        g.drawImage(image, 0, 0, this)
     }
 
     private fun setColorCharacter(bgColor: Color, fgColor: Color): LookupOp {

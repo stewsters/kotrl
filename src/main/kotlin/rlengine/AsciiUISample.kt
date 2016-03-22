@@ -30,15 +30,15 @@ class AsciiUISample(tilesetFile: String, characterWidth: Int, characterHeight: I
             }
         }
 
-        val button1 = AsciiTerminalButton(asciiPanel, "Click on me !", 0, 12, Color.GREEN, Color.ORANGE)
+        val button1 = AsciiTerminalButton(asciiPanel, "Click on me!", 0, 12, Color.GREEN, Color.ORANGE)
         button1.addMouseListener(object : MouseAdapter() {
             override fun mouseClicked(e: MouseEvent?) {
-                JOptionPane.showMessageDialog(terminal, "Thank !")
+                JOptionPane.showMessageDialog(terminal, "Thanks!")
             }
         })
         asciiPanel.add(button1)
 
-        val button2 = AsciiSelectableTerminalButton(asciiPanel, "Select me !", 0, 14, Color.GREEN, Color.ORANGE, Color.MAGENTA)
+        val button2 = AsciiSelectableTerminalButton(asciiPanel, "Select me!", 0, 14, Color.GREEN, Color.ORANGE, Color.MAGENTA)
         button2.addMouseListener(object : MouseAdapter() {
             override fun mouseClicked(e: MouseEvent?) {
                 val astb = e!!.component as AsciiSelectableTerminalButton
@@ -62,7 +62,6 @@ class AsciiUISample(tilesetFile: String, characterWidth: Int, characterHeight: I
             val input = JOptionPane.showInputDialog(null, "Choose tilset...",
                     "Choice of tileset", JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]) as String
 
-            //            if (input != null) {
             if (input == "Anikki [8x8]") {
                 AsciiUISample("src/assets/Anikki_square_8x8.png", 8, 8)
             } else if (input == "Yoshis island [9x12]") {
@@ -74,7 +73,6 @@ class AsciiUISample(tilesetFile: String, characterWidth: Int, characterHeight: I
             } else {
                 AsciiUISample("src/assets/Curses_square_24.png", 24, 24)
             }
-            //            }
         }
     }
 }
