@@ -1,12 +1,12 @@
-package rlengine
+package kotrl
 
 /**
  * Created by stewsters on 3/17/16.
  */
 
-import rlengine.ui.AsciiSelectableTerminalButton
-import rlengine.ui.AsciiTerminal
-import rlengine.ui.AsciiTerminalButton
+import kotrl.ui.AsciiSelectableTerminalButton
+import kotrl.ui.AsciiTerminal
+import kotrl.ui.AsciiTerminalButton
 import java.awt.Color
 import java.awt.Dimension
 import java.awt.event.MouseAdapter
@@ -24,13 +24,13 @@ class AsciiUISample(tilesetFile: String, characterWidth: Int, characterHeight: I
         val asciiPanel = terminal.asciiPanel
         val rand = Random()
 
-        for (i in 0..15) {
-            for (j in 0..9) {
+        for (i in 0..WINDOW_WIDTH - 1) {
+            for (j in 0..WINDOW_HEIGHT - 6) {
                 asciiPanel.write(i, j, rand.nextInt(256).toChar(), Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256)))
             }
         }
 
-        val button1 = AsciiTerminalButton(asciiPanel, "Click on me!", 0, 12, Color.GREEN, Color.ORANGE)
+        val button1 = AsciiTerminalButton(asciiPanel, "Click on me!", 0, WINDOW_HEIGHT - 4, Color.GREEN, Color.ORANGE)
         button1.addMouseListener(object : MouseAdapter() {
             override fun mouseClicked(e: MouseEvent?) {
                 JOptionPane.showMessageDialog(terminal, "Thanks!")
@@ -38,7 +38,7 @@ class AsciiUISample(tilesetFile: String, characterWidth: Int, characterHeight: I
         })
         asciiPanel.add(button1)
 
-        val button2 = AsciiSelectableTerminalButton(asciiPanel, "Select me!", 0, 14, Color.GREEN, Color.ORANGE, Color.MAGENTA)
+        val button2 = AsciiSelectableTerminalButton(asciiPanel, "Select me!", 0, WINDOW_HEIGHT - 2, Color.GREEN, Color.ORANGE, Color.MAGENTA)
         button2.addMouseListener(object : MouseAdapter() {
             override fun mouseClicked(e: MouseEvent?) {
                 val astb = e!!.component as AsciiSelectableTerminalButton

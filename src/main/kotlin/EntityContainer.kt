@@ -3,9 +3,7 @@ import java.util.*
 
 class EntityContainer {
 
-
     internal var components: ArrayList<Component> = ArrayList()
-
 
     fun send(message: Int) {
 
@@ -16,7 +14,7 @@ class EntityContainer {
         }
     }
 
-    fun add(component:Component){
+    fun add(component: Component) {
         components.add(component)
     }
 }

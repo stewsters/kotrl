@@ -1,4 +1,4 @@
-package rlengine.ui
+package kotrl.ui
 
 import java.awt.Color
 import java.awt.Dimension
@@ -217,7 +217,7 @@ class AsciiPanel(cellDimensions: Dimension, tilesetFile: String, characterWidth:
 
         for (j in 0..255) {
             // if is foreground color
-            if (j.toInt() != 0) {
+            if (j != 0) {
 
                 /**
                  * Calculation of j*255/dcr .

@@ -2,7 +2,7 @@ group 'com.stewsters'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.0.0'
+    ext.kotlin_version = '1.1.2'
 
     repositories {
         mavenCentral()
@@ -16,7 +16,7 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'application'
 
-mainClassName = 'rlengine.AsciiUISample'
+mainClassName = 'kotrl.AsciiUISample'
 
 sourceCompatibility = 1.8
 
