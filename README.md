@@ -1,8 +1,9 @@
-# Kotrl
+# kotrl
+Kotlin Roguelike Library based on AsciiTerminal
 
-This is an experiment to port https://github.com/julianmaster/AsciiTerminal to kotlin.  If you want
-to try to use it, I recommend starting from his library and converting it, as he has fixed bugs since
-I wrote this.
+This is a Kotlin port of Julian Master's [Ascii Terminal](https://github.com/julianmaster/AsciiTerminal) library.
+https://www.reddit.com/r/roguelikedev/comments/47uisp/asciiterminal_a_java_ascii_terminal_display/
 
-My main reason to do this is to see if I like it better for casual programming than Groovy.
-It't really hard to tell how you like a language from cherry picked examples.
+Which is in turn based on Trystan's [AsciiPanel](https://github.com/trystan/AsciiPanel)
+
+The purpose of this project is to try to learn some Kotlin.
