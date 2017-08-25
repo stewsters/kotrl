@@ -1,13 +1,10 @@
 package kotrl.ui
 
-
 import java.awt.Color
 import java.awt.image.RGBImageFilter
 
 /**
  * Change the background color of all character of the tileset to black.
-
- * @author Julien MAITRE
  */
 class AsciiBackgroundFilter(private val m_BackgroundColor: Color) : RGBImageFilter() {
 

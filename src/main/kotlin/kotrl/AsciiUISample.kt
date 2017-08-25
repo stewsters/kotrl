@@ -1,14 +1,12 @@
 package kotrl
 
-/**
- * Created by stewsters on 3/17/16.
- */
-
 import kotrl.ui.AsciiSelectableTerminalButton
 import kotrl.ui.AsciiTerminal
 import kotrl.ui.AsciiTerminalButton
 import java.awt.Color
 import java.awt.Dimension
+import java.awt.event.KeyEvent
+import java.awt.event.KeyListener
 import java.awt.event.MouseAdapter
 import java.awt.event.MouseEvent
 import java.util.*
@@ -17,6 +15,10 @@ import javax.swing.JOptionPane
 class AsciiUISample(tilesetFile: String, characterWidth: Int, characterHeight: Int) {
 
     private val terminal: AsciiTerminal
+
+    private var xPos: Int = 0
+    private var yPos: Int = 0
+
 
     init {
         terminal = AsciiTerminal(TITLE, Dimension(WINDOW_WIDTH, WINDOW_HEIGHT), tilesetFile, characterWidth, characterHeight)
@@ -29,6 +31,28 @@ class AsciiUISample(tilesetFile: String, characterWidth: Int, characterHeight: I
                 asciiPanel.write(i, j, rand.nextInt(256).toChar(), Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256)))
             }
         }
+
+        asciiPanel.addKeyListener(object : KeyListener {
+            override fun keyTyped(e: KeyEvent) {
+
+            }
+
+            override fun keyPressed(e: KeyEvent) {
+                when (e.extendedKeyCode) {
+                    KeyEvent.VK_A -> xPos--
+                    KeyEvent.VK_D -> xPos++
+                    KeyEvent.VK_W -> yPos++
+                    KeyEvent.VK_S -> yPos--
+                    else -> {
+                        print("Wut")
+                    }
+                }
+                asciiPanel.write(xPos, yPos, '@', Color.WHITE)
+                print("pressed")
+            }
+
+            override fun keyReleased(e: KeyEvent) {}
+        })
 
         val button1 = AsciiTerminalButton(asciiPanel, "Click on me!", 0, WINDOW_HEIGHT - 4, Color.GREEN, Color.ORANGE)
         button1.addMouseListener(object : MouseAdapter() {

@@ -5,8 +5,6 @@ import javax.swing.JFrame
 
 /**
  * Create a JFrame with an AsciiPanel.
-
- * @author Julien MAITRE
  */
 class AsciiTerminal(title: String, dimension: Dimension, tilesetFile: String, characterWidth: Int, characterHeight: Int) : JFrame() {
     val asciiPanel: AsciiPanel

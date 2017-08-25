@@ -5,8 +5,6 @@ import java.awt.Color
 
 /**
  * Representation of data of one character in the AsciiPanel
-
- * @author Julien MAITRE
  */
 class AsciiTerminalDataCell {
     var data: Char = ' '

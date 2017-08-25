@@ -8,8 +8,6 @@ import javax.swing.JComponent
 
 /**
  * A simple button
-
- * @author julien MAITRE
  */
 open class AsciiTerminalButton : JComponent, MouseListener {
     private val asciiPanel: AsciiPanel

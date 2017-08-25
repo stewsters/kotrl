@@ -17,8 +17,6 @@ import javax.swing.JPanel
 
 /**
  * JPanel with a ASCII render system
-
- * @author julien MAITRE
  */
 class AsciiPanel(cellDimensions: Dimension, tilesetFile: String, characterWidth: Int, characterHeight: Int) : JPanel() {
 
